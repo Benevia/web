@@ -114,5 +114,5 @@ benevia-web/
 
 ## Créditos
 
-- Identidad visual: Benevia Grupo Consultor / Morfogenia Consultores
+- Identidad visual: Benevia 
 - Desarrollo: Adaptado a especificaciones Fase 2 del proyecto Benevia Web
