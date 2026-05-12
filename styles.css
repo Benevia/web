@@ -126,7 +126,7 @@ textarea:focus-visible {
 /* Saltar a contenido (accesibilidad) */
 .skip-link {
   position: fixed;
-  top: -40px;
+  top: -100px;
   left: 0;
   background: var(--benevia-dark);
   color: var(--white);
