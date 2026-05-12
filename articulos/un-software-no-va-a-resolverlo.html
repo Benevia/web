@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Por qué un ERP llega antes que el diseño y automatiza el caos en lugar de resolverlo. Un artículo de Benevia por Braulio Pulido.">
+  <meta name="author" content="Braulio Pulido">
+
+  <meta property="og:title" content="Un software no va a resolverlo | Benevia">
+  <meta property="og:description" content="La tecnología puede automatizar la coordinación. También puede automatizar el caos.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://benevia.mx/articulos/un-software-no-va-a-resolverlo.html">
+  <meta property="og:locale" content="es_MX">
+
+  <title>Un software no va a resolverlo | Benevia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../images/LogoHt.png" type="image/png">
+
+  <style>
+    .articulo-hero {
+      background: var(--benevia-dark);
+      padding: 5rem 0 4rem;
+      color: #fff;
+    }
+    .articulo-hero .breadcrumb {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 1.5rem;
+    }
+    .articulo-hero .breadcrumb a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+    .articulo-hero .breadcrumb a:hover {
+      color: #fff;
+    }
+    .articulo-hero .tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--benevia-orange);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .articulo-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: #fff;
+      margin-bottom: 1rem;
+      max-width: 750px;
+    }
+    .articulo-hero .subtitulo {
+      font-size: 1.1rem;
+      color: #d1d5db;
+      max-width: 650px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .articulo-hero .meta {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+    .articulo-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+    .articulo-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #374151;
+      margin-bottom: 1.5rem;
+    }
+    .articulo-body h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--benevia-dark);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .articulo-nav {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 2rem;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .articulo-nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--benevia-blue);
+      text-decoration: none;
+    }
+    .articulo-nav a:hover {
+      text-decoration: underline;
+    }
+    .cta-inline {
+      background: #f0f7ff;
+      border-left: 4px solid var(--benevia-blue);
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+    }
+    .cta-inline p {
+      margin-bottom: 1rem;
+      font-weight: 500;
+      color: var(--benevia-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#inicio">Saltar al contenido principal</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="../index.html" class="logo-link" aria-label="Benevia - Inicio">
+        <img src="../images/LogoHt.png" alt="Benevia - Logo horizontal" class="logo-header" width="200" height="60">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mainNav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#para-quien">¿Es para usted?</a></li>
+          <li><a href="../index.html#que-hace">Qué hacemos</a></li>
+          <li><a href="../index.html#dueno">Dueño</a></li>
+          <li><a href="../index.html#familia">Familia</a></li>
+          <li><a href="../index.html#operacion">Operación</a></li>
+          <li><a href="../index.html#empresas">Empresas</a></li>
+          <li><a href="../metodologia.html">Metodología</a></li>
+          <li><a href="../articulos.html">Artículos</a></li>
+          <li><a href="../index.html#contacto" class="nav-cta">Agendar conversación</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <div class="articulo-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../articulos.html">Artículos</a></p>
+        <span class="tag">Diseño organizacional</span>
+        <h1>Un software no va a resolverlo</h1>
+        <p class="subtitulo">La tecnología puede automatizar la coordinación. También puede automatizar el caos.</p>
+        <p class="meta">Braulio Pulido · Marzo 2026</p>
+      </div>
+    </div>
+
+    <div class="articulo-body">
+
+      <p>Cada vez que una empresa tiene problemas serios de coordinación, aparece la misma propuesta: necesitamos un sistema. Un ERP, una plataforma, un software que integre todo y ponga orden. La idea tiene una lógica que se siente bien: si la información fluye, si los procesos están en un sistema, si todo queda registrado, la empresa va a funcionar mejor.</p>
+
+      <p>El problema es lo que esa idea supone sin decirlo.</p>
+
+      <p>Un sistema automatiza lo que ya existe. No diseña procesos, no define quién decide qué, no aclara qué se prometió ni a quién. Toma lo que la empresa ya hace y lo hace más rápido, más visible, más difícil de ignorar. Si lo que ya existe funciona bien, el sistema lo potencia. Si lo que ya existe está mal diseñado, el sistema automatiza el desorden.</p>
+
+      <p>Y el desorden automatizado tiene una cara muy concreta.</p>
+
+      <p>El sistema se instala, se capacita al equipo, y a las pocas semanas aparece lo de siempre: nadie lo llena como debería, la operación real sigue corriendo por WhatsApp y por correo, alguien arma un Excel paralelo porque "el sistema no me deja hacer lo que necesito", y los atajos se multiplican hasta que el ERP refleja una realidad que ya no tiene nada que ver con lo que pasa de verdad. El dueño, que invirtió tiempo y dinero y expectativa, está desesperado. Y la conclusión que saca, casi siempre, es que el sistema es malo o que la gente no quiere cambiar.</p>
+
+      <p>Las dos cosas pueden ser ciertas. Pero casi nunca son la causa.</p>
+
+      <p>La causa es que el sistema llegó antes que el diseño. La gente no evade el ERP por resistencia al cambio. Lo evade porque el ERP no resuelve el problema real que tiene encima, y lo que sí resuelve ese problema, aunque sea de forma informal e imperfecta, es el WhatsApp con el compañero de al lado.</p>
+
+      <p>Lo segundo es el argumento de las mejores prácticas. Los sistemas grandes vienen con procesos prediseñados, con flujos que representan cómo "debería" operar una empresa del sector. La promesa implícita es que adoptando esos flujos, la empresa adopta también la madurez operativa que los produce.</p>
+
+      <p>Eso no funciona así.</p>
+
+      <p>Las mejores prácticas de un sistema son las mejores prácticas de alguien más, en un contexto distinto, con personas que ya tienen claridad sobre sus roles y sus compromisos. Transplantarlas a una organización donde esa claridad no existe no instala la claridad. Solo agrega una capa de complejidad encima del problema original.</p>
+
+      <p>La gente sigue sin saber exactamente qué prometió ni a quién. Las conversaciones que no se tenían siguen sin tenerse, ahora con más campos obligatorios en una pantalla. La confiabilidad no mejora porque haya un sistema que registre los incumplimientos si nadie actúa sobre ellos. El sistema ve todo y no cambia nada.</p>
+
+      <p>Hay algo más que opera en el fondo de esta fantasía y vale la pena nombrarlo.</p>
+
+      <p>Implementar un sistema es una decisión visible, con fecha, con proveedor, con presupuesto y con una narrativa de transformación que se puede comunicar. Rediseñar cómo se coordinan las personas, cómo se hacen y se honran las promesas, qué conversaciones se tienen y cuáles se evitan, es un trabajo silencioso, incómodo y sin fecha de corte clara. Uno se puede anunciar en una junta. El otro no.</p>
+
+      <p>Por eso se elige el sistema. No porque resuelva mejor el problema, sino porque es más fácil de decidir y de explicar.</p>
+
+      <p>La restricción real en la mayoría de las empresas que buscan un ERP no es la falta de tecnología. Es que nadie tiene claro quién es responsable de qué resultado. Es que los compromisos se hacen de manera vaga y se deshacen sin consecuencia. Es que la coordinación depende de que el dueño esté presente para que las cosas avancen. Ningún software resuelve eso.</p>
+
+      <p>Lo que sí resuelve un buen sistema, cuando llega en el momento correcto, es amplificar una estructura que ya funciona. Cuando los roles están definidos, cuando las promesas tienen peso, cuando la coordinación no depende de una sola persona, un sistema hace todo eso más eficiente, más trazable, más escalable. Ahí sí tiene sentido.</p>
+
+      <p>El orden correcto importa.</p>
+
+      <p>Primero el diseño: quién decide qué, qué se compromete con quién, cómo fluye el trabajo de un área a la siguiente, qué pasa cuando algo no se cumple. Después, y solo después, el sistema que automatiza ese diseño y lo sostiene en el tiempo.</p>
+
+      <p>Un sistema es una consecuencia de la claridad, no un sustituto de ella.</p>
+
+      <p>Comprar tecnología antes de tener esa claridad es como construir una autopista antes de saber a dónde va. La obra queda. El destino, no.</p>
+
+      <div class="cta-inline">
+        <p>¿Está considerando implementar un sistema antes de tener claro el diseño? Conversamos sin costo ni compromiso.</p>
+        <a href="../index.html#contacto" class="btn btn-primary">Agendar conversación</a>
+      </div>
+
+      <div class="articulo-nav">
+        <a href="../articulos.html">← Todos los artículos</a>
+        <a href="no-es-la-estrategia-es-el-contexto.html">← Artículo anterior</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/LogoVti.png" alt="Benevia - Logo vertical" class="logo-footer" width="120" height="120" loading="lazy">
+          <p class="footer-slogan">Transformando para lograr</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="../index.html#inicio">Inicio</a></li>
+            <li><a href="../index.html#para-quien">¿Es para usted?</a></li>
+            <li><a href="../index.html#que-hace">Qué hacemos</a></li>
+            <li><a href="../index.html#contacto">Contacto</a></li>
+            <li><a href="../metodologia.html">Metodología</a></li>
+            <li><a href="../articulos.html">Artículos</a></li>
+          </ul>
+        </div>
+        <div class="footer-segments">
+          <h4>Para...</h4>
+          <ul>
+            <li><a href="../index.html#dueno">El dueño que lo hace todo</a></li>
+            <li><a href="../index.html#familia">La familia en transición</a></li>
+            <li><a href="../index.html#operacion">Quien opera sin autoridad</a></li>
+            <li><a href="../index.html#empresas">Empresas con orden real</a></li>
+          </ul>
+        </div>
+        <div class="footer-legal">
+          <h4>Legal</h4>
+          <p>© Benevia. Todos los derechos reservados.</p>
+          <p class="footer-tagline">Profesionalizamos la operación. Institucionalizamos el futuro.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
