@@ -1076,3 +1076,100 @@ strong {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================
+   PÁGINA DE METODOLOGÍA — clases específicas
+   (antes eran estilos inline; unificados aquí)
+   ============================================ */
+
+/* Hero de metodología — offset del header fijo */
+.met-hero {
+  padding: 80px 0 60px;
+  background: var(--benevia-dark);
+  color: var(--white);
+}
+
+.met-hero h1,
+.met-hero h2,
+.met-hero h3 {
+  color: var(--white);
+}
+
+/* Contenido de hero centrado */
+.hero-content--centered {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Subtítulo del hero de metodología */
+.hero-subtitle {
+  font-size: var(--text-lg);
+  margin-top: var(--space-2);
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+/* Secciones de contenido de metodología */
+.content-section {
+  padding: var(--space-8) 0;
+}
+
+.content-section--white {
+  background: var(--white);
+}
+
+.content-section--gray {
+  background: #f8f8f8;
+}
+
+/* Grid de bloques de contenido */
+.content-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.content-grid.single-col {
+  max-width: 800px;
+}
+
+.content-grid--centered {
+  text-align: center;
+}
+
+/* Párrafos seguidos dentro de content-block */
+.content-block p + p {
+  margin-top: var(--space-2);
+}
+
+/* Texto blanco dentro de highlight-box (sin clase adicional) */
+.highlight-box p {
+  color: var(--white);
+}
+
+/* Texto introductorio de CTA centrado */
+.cta-text {
+  max-width: 640px;
+  margin: var(--space-2) auto 0;
+}
+
+/* Contenedor del botón CTA */
+.cta-actions {
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .content-section {
+    padding: var(--space-10) 0;
+  }
+
+  .content-grid:not(.single-col) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .met-hero {
+    padding: 100px 0 80px;
+  }
+}
