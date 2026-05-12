@@ -1,21 +1,7 @@
-# Benevia Grupo Consultor — Sitio Web
+# Benevia — Sitio Web
 
-Sitio estático informativo para Benevia Grupo Consultor. Diseñado como herramienta de validación para clientes que llegan por recomendación directa.
+Sitio informativo para Benevia. Diseñado como herramienta de validación para clientes que llegan por recomendación directa.
 
----
-
-## Estructura de archivos
-
-```
-benevia-web/
-├── index.html          # Single-page con 5 secciones de contenido
-├── styles.css          # CSS3 moderno, variables :root, mobile-first
-├── script.js           # JS vainilla (< 2KB), menú hamburguesa accesible
-├── images/
-│   ├── LogoH.jpg       # Logo horizontal (header)
-│   └── LogoV.jpg       # Logo vertical (footer)
-└── README.md           # Este documento
-```
 
 ---
 
@@ -77,40 +63,7 @@ benevia-web/
 
 ---
 
-## Decisiones de arquitectura confirmadas
 
-1. **Single-page:** Las 5 secciones de contenido se presentan en una sola página con navegación por anclas. Menor fricción para visitantes que validan una recomendación previa.
-2. **Formulario Netlify:** El CTA "Agendar conversación" dirige a un formulario Netlify Forms con campos: nombre, empresa, teléfono, email (opcional), mensaje. Compatible con despliegue en Netlify drag & drop.
-3. **Estático puro:** Sin animaciones de entrada. El mercado meta (dueños 50–60 años) valora claridad y velocidad de carga por encima de efectos visuales.
-
----
-
-## Requisitos técnicos cumplidos
-
-- ✅ HTML5 semántico (`header`, `nav`, `main`, `section`, `article`, `footer`)
-- ✅ CSS3 con variables `:root`, Flexbox, CSS Grid
-- ✅ JavaScript vainilla, < 2KB, sin librerías externas
-- ✅ Mobile-first, responsive en 320px, 768px, 1200px
-- ✅ Menú hamburguesa funcional con ARIA (`aria-expanded`, `aria-label`, `aria-controls`)
-- ✅ SEO on-page: meta tags, Open Graph, título descriptivo, jerarquía H1–H3, alt texts, `lang="es"`
-- ✅ Accesibilidad WCAG AA: contraste validado, navegación por teclado, focus states visibles, `prefers-reduced-motion`
-- ✅ Lazy loading en imágenes fuera del viewport inicial
-- ✅ Formulario compatible con Netlify Forms (`name="contacto" method="POST" netlify`)
-- ✅ Rutas relativas en todo el proyecto
-
----
-
-## Despliegue en Netlify
-
-1. Comprima la carpeta `benevia-web/` en un archivo ZIP.
-2. Vaya a [netlify.com](https://netlify.com) e inicie sesión.
-3. En el dashboard, arrastre y suelte el ZIP en el área de despliegue.
-4. Netlify generará una URL pública automáticamente.
-5. Para usar dominio propio: Site settings → Domain management.
-
-**Nota sobre el formulario:** Netlify detecta automáticamente el formulario con el atributo `netlify`. Los envíos aparecerán en el panel de Forms del sitio.
-
----
 
 ## Créditos
 
