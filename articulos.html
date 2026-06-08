@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Artículos de Benevia sobre profesionalización de empresas familiares, liderazgo y diseño organizacional.">
+  <meta name="description" content="Textos sobre coordinación, autoridad y estructura en empresas que ya crecieron pero todavía dependen de unas cuantas personas.">
   <meta name="author" content="Benevia">
 
   <meta property="og:title" content="Artículos | Benevia">
-  <meta property="og:description" content="Reflexiones sobre empresas familiares, liderazgo y diseño organizacional.">
+  <meta property="og:description" content="Textos sobre coordinación, autoridad y estructura en empresas que ya crecieron pero todavía dependen de unas cuantas personas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://benevia.mx/articulos.html">
   <meta property="og:locale" content="es_MX">
@@ -22,74 +22,155 @@
   <link rel="icon" href="images/LogoHt.png" type="image/png">
 
   <style>
-    .articulos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
+    /* --- Filtros de categoría --- */
+    .filtros-categorias {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .filtro-btn {
+      font-family: var(--font-titles);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      padding: 0.4rem 1.1rem;
+      border: 2px solid var(--light-gray);
+      background: transparent;
+      color: var(--text-secondary);
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+      line-height: 1.4;
+    }
+
+    .filtro-btn:hover {
+      border-color: var(--benevia-blue);
+      color: var(--benevia-blue);
+    }
+
+    .filtro-btn.active {
+      background: var(--benevia-blue);
+      border-color: var(--benevia-blue);
+      color: var(--white);
+    }
+
+    /* --- Descripción de categoría activa --- */
+    .categoria-desc {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin-top: 1.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--benevia-blue);
+      line-height: 1.6;
+      display: none;
+    }
+
+    /* --- Lista de artículos --- */
+    .articulos-lista {
       margin-top: 2.5rem;
     }
-    .articulo-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 2rem;
-      transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+    .articulo-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .articulo-item:first-child {
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .articulo-item-header {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.25rem;
     }
-    .articulo-card:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-      transform: translateY(-2px);
-    }
-    .articulo-tag {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
+
+    .articulo-item-tag {
+      font-family: var(--font-titles);
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--benevia-orange);
-      margin-bottom: 0.75rem;
     }
-    .articulo-card h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.2rem;
+
+    .articulo-item-fecha {
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      font-family: var(--font-body);
+    }
+
+    .articulo-item-titulo {
+      font-family: var(--font-titles);
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--benevia-dark);
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.4rem 0;
       line-height: 1.35;
     }
-    .articulo-card .subtitulo {
-      font-size: 0.95rem;
+
+    .articulo-item-titulo a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .articulo-item-titulo a:hover {
+      color: var(--benevia-blue);
+    }
+
+    .articulo-item-subtitulo {
+      font-size: 0.92rem;
       color: #6b7280;
-      margin-bottom: 1.25rem;
-      line-height: 1.5;
-      flex-grow: 1;
+      line-height: 1.55;
+      margin: 0 0 0.75rem 0;
+      max-width: 680px;
     }
-    .articulo-card .fecha {
-      font-size: 0.82rem;
-      color: #9ca3af;
-      margin-bottom: 1.25rem;
-    }
-    .articulo-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.9rem;
+
+    .articulo-item-link {
+      font-family: var(--font-titles);
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--benevia-blue);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      transition: gap 0.2s ease;
+      gap: 0.3rem;
+      transition: gap 0.15s ease;
     }
-    .articulo-link:hover {
-      gap: 0.7rem;
+
+    .articulo-item-link:hover {
+      gap: 0.55rem;
+    }
+
+    /* --- Próximamente --- */
+    .proximamente-msg {
+      padding: 3rem 0 1rem;
+      color: var(--mid-gray);
+      font-size: var(--text-base);
+    }
+
+    /* --- Responsivo --- */
+    @media (max-width: 480px) {
+      .filtro-btn {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.85rem;
+      }
+
+      .articulo-item-titulo {
+        font-size: 1.05rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <a class="skip-link" href="#inicio">Saltar al contenido principal</a>
-
 
   <!-- HEADER -->
   <header class="site-header">
@@ -121,96 +202,138 @@
     </div>
   </header>
 
-  <main>
+  <main id="inicio">
     <section class="section section-light">
       <div class="container">
+
         <p class="section-tag">Reflexiones</p>
         <h1 class="section-title">Artículos</h1>
-        <p class="section-intro">Ideas sobre empresas familiares, diseño organizacional y liderazgo. Sin recetas. Con preguntas que vale la pena hacerse.</p>
+        <p class="section-intro">Empresas que ya crecieron pero todavía dependen de unas cuantas personas. Textos sobre coordinación, autoridad y estructura.</p>
 
-        <div class="articulos-grid">
+        <!-- Filtros -->
+        <div class="filtros-categorias" role="group" aria-label="Filtrar artículos por categoría">
+          <button class="filtro-btn active" data-filtro="todos">Todos</button>
+          <button class="filtro-btn" data-filtro="coordinacion">Coordinación</button>
+          <button class="filtro-btn" data-filtro="restriccion">Restricción</button>
+          <button class="filtro-btn" data-filtro="diseno">Diseño</button>
+          <button class="filtro-btn" data-filtro="contexto">Contexto</button>
+          <button class="filtro-btn" data-filtro="transicion">Transición</button>
+          <button class="filtro-btn" data-filtro="estrategia">Estrategia</button>
+        </div>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Confianza y delegación</p>
-            <h2>La gente deja de pensar cuando pensar no sirve</h2>
-            <p class="subtitulo">Cómo la supervisión constante no controla mejor, sino que enseña a no decidir.</p>
-            <p class="fecha">Mayo 2025</p>
-            <a href="articulos/la-gente-deja-de-pensar.html" class="articulo-link">Leer artículo →</a>
+        <!-- Descripción de categoría activa -->
+        <div class="categoria-desc" id="categoriaDesc" aria-live="polite"></div>
+
+        <!-- Lista de artículos (orden descendente: más reciente primero) -->
+        <div class="articulos-lista" id="articulosLista">
+
+          <article class="articulo-item" data-categoria="transicion">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Transición</span>
+              <span class="articulo-item-fecha">Junio 2026</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/soltar-no-es-decidir-soltar.html">Soltar no es decidir soltar</a></h2>
+            <p class="articulo-item-subtitulo">Soltar es la consecuencia de tener un lugar nuevo desde donde estar.</p>
+            <a href="articulos/soltar-no-es-decidir-soltar.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Confianza y delegación</p>
-            <h2>El mito de "delegar": la confianza se diseña</h2>
-            <p class="subtitulo">Por qué delegar sin estructura genera dependencia y qué hacer para que confiar sea razonable.</p>
-            <p class="fecha">Julio 2025</p>
-            <a href="articulos/confianza-se-disenha.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="diseno">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Diseño</span>
+              <span class="articulo-item-fecha">Junio 2026</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/la-empresa-custodiada-y-la-empresa-disenada.html">La empresa custodiada y la empresa diseñada</a></h2>
+            <p class="articulo-item-subtitulo">Lo que hace posible que la empresa funcione sin vigilancia y presencia constante del dueño.</p>
+            <a href="articulos/la-empresa-custodiada-y-la-empresa-disenada.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Restricciones del sistema</p>
-            <h2>Esfuerzo local, avance cero: la trampa de optimizar lo que no importa</h2>
-            <p class="subtitulo">Por qué el esfuerzo desmedido no es señal de compromiso, sino de un problema de diseño sistémico.</p>
-            <p class="fecha">Septiembre 2025</p>
-            <a href="articulos/esfuerzo-local-avance-cero.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="coordinacion">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Coordinación</span>
+              <span class="articulo-item-fecha">Mayo 2026</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/el-gerente-que-sabe-pero-no-coordina.html">El gerente que sabe, pero no coordina</a></h2>
+            <p class="articulo-item-subtitulo">Saber hacer no es saber coordinar. Confundirlos es uno de los errores más caros de una empresa que crece.</p>
+            <a href="articulos/el-gerente-que-sabe-pero-no-coordina.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Restricciones del sistema</p>
-            <h2>La restricción que nadie ve porque todos la obedecen</h2>
-            <p class="subtitulo">Cómo las reglas del pasado se convierten en los cuellos de botella invisibles de tu empresa actual.</p>
-            <p class="fecha">Noviembre 2025</p>
-            <a href="articulos/restriccion-que-nadie-ve.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="diseno">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Diseño</span>
+              <span class="articulo-item-fecha">Marzo 2026</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/un-software-no-va-a-resolverlo.html">Un software no va a resolverlo</a></h2>
+            <p class="articulo-item-subtitulo">La tecnología puede automatizar la coordinación. También puede automatizar el caos.</p>
+            <a href="articulos/un-software-no-va-a-resolverlo.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Diseño organizacional</p>
-            <h2>No es la gente, es el diseño</h2>
-            <p class="subtitulo">Si tu gente no toma iniciativa ni declara problemas, no es su actitud. Es del contexto que tú mismo has construido.</p>
-            <p class="fecha">Enero 2026</p>
-            <a href="articulos/no-es-la-gente-es-el-diseno.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="contexto">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Contexto</span>
+              <span class="articulo-item-fecha">Febrero 2026</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/no-es-la-estrategia-es-el-contexto.html">No es la estrategia, es el contexto</a></h2>
+            <p class="articulo-item-subtitulo">Por qué tu equipo se comporta exactamente como el sistema que construiste, y no como la estrategia que diseñaste.</p>
+            <a href="articulos/no-es-la-estrategia-es-el-contexto.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Diseño organizacional</p>
-            <h2>No es la estrategia, es el contexto</h2>
-            <p class="subtitulo">Por qué tu equipo se comporta exactamente como el sistema que construiste, y no como la estrategia que diseñaste.</p>
-            <p class="fecha">Febrero 2026</p>
-            <a href="articulos/no-es-la-estrategia-es-el-contexto.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="diseno">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Diseño</span>
+              <span class="articulo-item-fecha">Enero 2026</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/no-es-la-gente-es-el-diseno.html">No es la gente, es el diseño</a></h2>
+            <p class="articulo-item-subtitulo">Si tu gente no toma iniciativa ni declara problemas, no es su actitud. Es del contexto que tú mismo has construido.</p>
+            <a href="articulos/no-es-la-gente-es-el-diseno.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Diseño organizacional</p>
-            <h2>Un software no va a resolverlo</h2>
-            <p class="subtitulo">La tecnología puede automatizar la coordinación. También puede automatizar el caos.</p>
-            <p class="fecha">Marzo 2026</p>
-            <a href="articulos/un-software-no-va-a-resolverlo.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="restriccion">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Restricción</span>
+              <span class="articulo-item-fecha">Noviembre 2025</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/restriccion-que-nadie-ve.html">La restricción que nadie ve porque todos la obedecen</a></h2>
+            <p class="articulo-item-subtitulo">Cómo las reglas del pasado se convierten en los cuellos de botella invisibles de tu empresa actual.</p>
+            <a href="articulos/restriccion-que-nadie-ve.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Diseño organizacional</p>
-            <h2>El gerente que sabe, pero no coordina</h2>
-            <p class="subtitulo">Saber hacer no es saber coordinar. Confundirlos es uno de los errores más caros de una empresa que crece.</p>
-            <p class="fecha">Mayo 2026</p>
-            <a href="articulos/el-gerente-que-sabe-pero-no-coordina.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="restriccion">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Restricción</span>
+              <span class="articulo-item-fecha">Septiembre 2025</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/esfuerzo-local-avance-cero.html">Esfuerzo local, avance cero: la trampa de optimizar lo que no importa</a></h2>
+            <p class="articulo-item-subtitulo">Por qué el esfuerzo desmedido no es señal de compromiso, sino de un problema de diseño sistémico.</p>
+            <a href="articulos/esfuerzo-local-avance-cero.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Diseño organizacional</p>
-            <h2>La empresa custodiada y la empresa diseñada</h2>
-            <p class="subtitulo">Lo que hace posible que la empresa funcione sin vigilancia y presencia constante del dueño.</p>
-            <p class="fecha">Junio 2026</p>
-            <a href="articulos/la-empresa-custodiada-y-la-empresa-disenada.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="coordinacion">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Coordinación</span>
+              <span class="articulo-item-fecha">Julio 2025</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/confianza-se-disenha.html">El mito de "delegar": la confianza se diseña</a></h2>
+            <p class="articulo-item-subtitulo">Por qué delegar sin estructura genera dependencia y qué hacer para que confiar sea razonable.</p>
+            <a href="articulos/confianza-se-disenha.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
-          <article class="articulo-card">
-            <p class="articulo-tag">Diseño organizacional</p>
-            <h2>Soltar no es decidir soltar</h2>
-            <p class="subtitulo">Soltar es la consecuencia de tener un lugar nuevo desde donde estar.</p>
-            <p class="fecha">Junio 2026</p>
-            <a href="articulos/soltar-no-es-decidir-soltar.html" class="articulo-link">Leer artículo →</a>
+          <article class="articulo-item" data-categoria="coordinacion">
+            <div class="articulo-item-header">
+              <span class="articulo-item-tag">Coordinación</span>
+              <span class="articulo-item-fecha">Mayo 2025</span>
+            </div>
+            <h2 class="articulo-item-titulo"><a href="articulos/la-gente-deja-de-pensar.html">La gente deja de pensar cuando pensar no sirve</a></h2>
+            <p class="articulo-item-subtitulo">Cómo la supervisión constante no controla mejor, sino que enseña a no decidir.</p>
+            <a href="articulos/la-gente-deja-de-pensar.html" class="articulo-item-link">Leer artículo →</a>
           </article>
 
         </div>
+
+        <!-- Próximamente (visible sólo cuando filtro Estrategia está activo) -->
+        <div class="proximamente-msg" id="proximamente" hidden>
+          Próximamente.
+        </div>
+
       </div>
     </section>
   </main>
@@ -220,7 +343,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://benevia.mx/images/LogoVti.png" alt="Benevia - Logo vertical" class="logo-footer" width="120" height="120" loading="lazy">
+          <img src="images/LogoVti.png" alt="Benevia - Logo vertical" class="logo-footer" width="120" height="120" loading="lazy">
           <p class="footer-slogan">Transformar para lograr</p>
         </div>
         <div class="footer-nav">
@@ -253,5 +376,61 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    (function () {
+      var filtros = document.querySelectorAll('.filtro-btn');
+      var items = document.querySelectorAll('.articulo-item');
+      var descDiv = document.getElementById('categoriaDesc');
+      var proximamente = document.getElementById('proximamente');
+      var lista = document.getElementById('articulosLista');
+
+      var descripciones = {
+        coordinacion: 'Petición, promesa, quiebre, confiabilidad y agenda de compromisos. Lo que hace que la gente entregue lo que dijo.',
+        restriccion: 'El cuello de botella, el esfuerzo que no avanza y la palanca que mueve el sistema.',
+        diseno: 'Roles, autoridad, estructura y profesionalización. La arquitectura que produce el comportamiento real de la empresa.',
+        contexto: 'Lo que el dueño construye sin darse cuenta y que termina siendo la cultura que la empresa tiene.',
+        transicion: 'Sucesión, cesión de mando, generaciones y cambios de autoridad.',
+        estrategia: 'Prospectiva, diseño del futuro e institucionalización de la dirección.'
+      };
+
+      filtros.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var cat = this.getAttribute('data-filtro');
+
+          filtros.forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+
+          if (cat === 'estrategia') {
+            lista.style.display = 'none';
+            proximamente.hidden = false;
+            descDiv.textContent = descripciones.estrategia;
+            descDiv.style.display = 'block';
+            return;
+          }
+
+          lista.style.display = 'block';
+          proximamente.hidden = true;
+
+          if (cat === 'todos') {
+            descDiv.style.display = 'none';
+            descDiv.textContent = '';
+          } else {
+            descDiv.textContent = descripciones[cat];
+            descDiv.style.display = 'block';
+          }
+
+          items.forEach(function (item) {
+            if (cat === 'todos' || item.getAttribute('data-categoria') === cat) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    }());
+  </script>
+
 </body>
 </html>
