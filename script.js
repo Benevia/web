@@ -1,73 +1,25 @@
-/**
- * Benevia Grupo Consultor — Script principal
- * Menú hamburguesa, navegación accesible, sin dependencias.
- * Tamaño objetivo: < 5KB minificado.
- */
 
-(function() {
-  'use strict';
-
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  const navLinks = mainNav ? mainNav.querySelectorAll('a') : [];
-
-  /**
-   * Alternar menú móvil
-   */
-  function toggleMenu() {
-    const isOpen = mainNav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    // Prevenir scroll del body cuando el menú está abierto
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  }
-
-  /**
-   * Cerrar menú móvil
-   */
-  function closeMenu() {
-    mainNav.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-
-  // Evento del botón hamburguesa
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', toggleMenu);
-  }
-
-  // Cerrar menú al hacer click en cualquier link de navegación
-  navLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (mainNav.classList.contains('open')) {
-        closeMenu();
-      }
+(() => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
     });
-  });
-
-  // Cerrar menú al presionar Escape (accesibilidad)
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && mainNav.classList.contains('open')) {
-      closeMenu();
-      menuToggle.focus();
-    }
-  });
-
-  // Cerrar menú al hacer click fuera de él
-  document.addEventListener('click', function(event) {
-    if (
-      mainNav.classList.contains('open') &&
-      !mainNav.contains(event.target) &&
-      !menuToggle.contains(event.target)
-    ) {
-      closeMenu();
-    }
-  });
-
-  // Ajustar al cambiar tamaño de ventana: si pasa a desktop, cerrar menú móvil
-  window.addEventListener('resize', function() {
-    if (window.innerWidth >= 1200 && mainNav.classList.contains('open')) {
-      closeMenu();
-    }
-  });
-
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
+    }));
+  }
+  const buttons = [...document.querySelectorAll('.filter-btn')];
+  const articles = [...document.querySelectorAll('.article-list-item')];
+  const empty = document.getElementById('emptyFilter');
+  if (buttons.length && articles.length) {
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active')); btn.classList.add('active');
+      const f = btn.dataset.filter; let shown = 0;
+      articles.forEach(a => { const ok = f === 'todos' || a.dataset.category === f; a.hidden = !ok; if(ok) shown++; });
+      if (empty) empty.hidden = shown !== 0;
+    }));
+  }
 })();
