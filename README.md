@@ -1,4 +1,4 @@
-# Benevia.mx — versión minimalista centrada en continuidad y transferencia
+# Benevia.mx — versión final minimalista
 
 ## Criterio de esta versión
 
@@ -24,7 +24,8 @@ Los 12 artículos se conservaron sin modificación. Sólo comparten la hoja de e
 - Artículos
 - Conversar
 
-## Pendientes de producción
+## Revisión final
 
-- Sustituir `TOKEN_AQUI` por el token real de Cloudflare Web Analytics si se desea activar analítica.
-- Confirmar políticas públicas y datos de contacto antes de publicar.
+- El formulario usa el endpoint histórico de Formspree `xdabwwzv`, presente en todas las versiones anteriores del portal. Antes de la primera publicación en producción conviene confirmar en el panel de Formspree que ese endpoint siga activo en la cuenta de Benevia.
+- Sustituir `TOKEN_AQUI` por el token real de Cloudflare Web Analytics sólo si se desea activar esa analítica.
+- Los 12 artículos se mantienen sin modificación respecto de la versión base.
