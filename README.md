@@ -1,34 +1,30 @@
-# Benevia.mx — propuesta minimalista
+# Benevia.mx — versión minimalista centrada en continuidad y transferencia
 
-Versión construida sobre `Benevia_mx_2026-08-09_v2.zip`.
+## Criterio de esta versión
 
-## Criterio de diseño
+Esta versión conserva la arquitectura minimalista del portal, pero cambia el punto de entrada. El sitio ya no comienza describiendo una empresa ideal, sino el momento en que la forma de operar que permitió llegar hasta aquí empieza a resultar insuficiente para la siguiente etapa.
 
-La arquitectura conceptual se conserva, pero la información se distribuye por capas:
+El hilo principal es: reconocer el momento → elegir desde dónde se vive → entender qué puede cambiar → conocer cómo trabaja Benevia → conversar.
 
-1. **Inicio**: reconocimiento rápido, tres resultados, tres entradas por situación y una explicación mínima de la intervención.
-2. **Qué puede lograr**: siete resultados con profundidad desplegable bajo demanda.
-3. **Para quién**: tres rutas (dueños, empresas familiares, directivos/gerentes) y señales de cuándo el trabajo suele aportar.
-4. **Cómo trabajamos**: seis pasos visibles, con detalle desplegable sólo si el lector lo solicita.
-5. **Artículos**: índice editorial simple; los 12 archivos de artículo se conservaron sin modificación.
-6. **Conversar**: formulario principal y datos secundarios en desplegables.
-
-## Decisiones visuales
-
-- Mucho más espacio en blanco y menos tarjetas.
-- Líneas, tipografía y jerarquía editorial en lugar de bloques densos.
-- Azul Benevia como acento principal; naranja y verde sólo como apoyos.
-- Navegación progresiva: primero reconocer, después elegir, luego profundizar.
-- Componentes `<details>` nativos para ofrecer profundidad sin saturar la primera lectura.
-- Diseño responsivo sin dependencias externas de JavaScript.
+El lenguaje público evita exponer criterios internos de tamaño o facturación y mantiene tratamiento de “usted”. La profundidad metodológica queda detrás de resultados observables y situaciones reales.
 
 ## Artículos
 
-Los 12 archivos dentro de `/articulos/` se dejaron intactos. Su presentación cambia únicamente por la nueva hoja de estilos compartida.
+Los 12 artículos se conservaron sin modificación. Sólo comparten la hoja de estilos del portal.
 
-## Publicación
+## Navegación
 
-- Se conserva `_redirects`, `robots.txt`, `sitemap.xml` y `wrangler.jsonc`.
-- `metodologia.html` continúa redirigiendo a `como-trabajamos.html`.
-- Cloudflare Web Analytics sigue pendiente de insertar el token real en los bloques comentados.
-- El formulario conserva el endpoint de Formspree de la v2.
+- Inicio
+- Qué puede lograr
+- Para quién
+  - Dueños y fundadores
+  - Empresas familiares
+  - Directivos y gerentes
+- Cómo trabajamos
+- Artículos
+- Conversar
+
+## Pendientes de producción
+
+- Sustituir `TOKEN_AQUI` por el token real de Cloudflare Web Analytics si se desea activar analítica.
+- Confirmar políticas públicas y datos de contacto antes de publicar.
