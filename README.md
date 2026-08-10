@@ -10,7 +10,7 @@ El lenguaje público evita exponer criterios internos de tamaño o facturación 
 
 ## Artículos
 
-Los 12 artículos se conservaron sin modificación. Sólo comparten la hoja de estilos del portal.
+El contenido editorial de los 12 artículos se conservó sin modificación. En esta actualización sólo cambiaron sus enlaces de navegación y metadatos técnicos para usar las URLs públicas limpias.
 
 ## Navegación
 
@@ -28,4 +28,12 @@ Los 12 artículos se conservaron sin modificación. Sólo comparten la hoja de e
 
 - El formulario usa el endpoint histórico de Formspree `xdabwwzv`, presente en todas las versiones anteriores del portal. Antes de la primera publicación en producción conviene confirmar en el panel de Formspree que ese endpoint siga activo en la cuenta de Benevia.
 - Sustituir `TOKEN_AQUI` por el token real de Cloudflare Web Analytics sólo si se desea activar esa analítica.
-- Los 12 artículos se mantienen sin modificación respecto de la versión base.
+- El cuerpo editorial de los 12 artículos se mantiene sin modificación respecto de la versión base.
+
+## Convención de URLs
+
+La URL pública canónica de cada página es la ruta limpia, sin `.html` (por ejemplo, `/contacto`, `/articulos` y `/resultados`). Los archivos físicos conservan la extensión `.html`; Cloudflare Workers los sirve mediante `html_handling: auto-trailing-slash`.
+
+El archivo `_redirects` sólo dirige rutas históricas y URLs con `.html` hacia su versión limpia. No existen reglas en sentido inverso, para evitar ciclos de redirección.
+
+Los textos editoriales de los 12 artículos no se modificaron en esta actualización; sólo se actualizaron navegación y metadatos técnicos para usar las URLs canónicas limpias.

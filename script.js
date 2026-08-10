@@ -1,8 +1,8 @@
 (() => {
   const anclasAnteriores={
-    '#dueno':'duenos-fundadores.html','#dueno-fundador':'duenos-fundadores.html','#familia':'empresas-familiares.html','#empresa-familiar':'empresas-familiares.html','#operacion':'directivos-gerentes.html','#empresas':'para-quien.html','#es-para-usted':'para-quien.html','#que-hacemos':'como-trabajamos.html','#metodologia':'como-trabajamos.html'
+    '#dueno':'/duenos-fundadores','#dueno-fundador':'/duenos-fundadores','#familia':'/empresas-familiares','#empresa-familiar':'/empresas-familiares','#operacion':'/directivos-gerentes','#empresas':'/para-quien','#es-para-usted':'/para-quien','#que-hacemos':'/como-trabajamos','#metodologia':'/como-trabajamos'
   };
-  const enPortada=/(^\/$|\/index\.html$)/.test(window.location.pathname);
+  const enPortada=/(^\/$|\/index(?:\.html)?$)/.test(window.location.pathname);
   const destino=anclasAnteriores[window.location.hash];
   if(enPortada&&destino){window.location.replace(destino);return;}
   const toggle=document.querySelector('.menu-toggle');

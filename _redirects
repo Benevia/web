@@ -1,20 +1,40 @@
-# Redirecciones permanentes desde las rutas del sitio anterior.
-# Cloudflare Workers (assets) procesa este archivo antes de servir el contenido estático.
+# URLs canónicas públicas: rutas limpias sin .html.
+# Cloudflare Workers sirve los archivos .html con html_handling = auto-trailing-slash.
+# Estas reglas sólo consolidan URLs históricas en un único salto 301.
 
-/metodologia.html       /como-trabajamos.html   301
-/metodologia            /como-trabajamos.html   301
-/index.html             /                       301
+/index / 301
+/index.html / 301
+/resultados.html /resultados 301
+/para-quien.html /para-quien 301
+/duenos-fundadores.html /duenos-fundadores 301
+/empresas-familiares.html /empresas-familiares 301
+/directivos-gerentes.html /directivos-gerentes 301
+/como-trabajamos.html /como-trabajamos 301
+/articulos.html /articulos 301
+/contacto.html /contacto 301
+/articulos/que-quede-por-escrito.html /articulos/que-quede-por-escrito 301
+/articulos/soltar-no-es-decidir-soltar.html /articulos/soltar-no-es-decidir-soltar 301
+/articulos/la-empresa-custodiada-y-la-empresa-disenada.html /articulos/la-empresa-custodiada-y-la-empresa-disenada 301
+/articulos/el-gerente-que-sabe-pero-no-coordina.html /articulos/el-gerente-que-sabe-pero-no-coordina 301
+/articulos/un-software-no-va-a-resolverlo.html /articulos/un-software-no-va-a-resolverlo 301
+/articulos/no-es-la-estrategia-es-el-contexto.html /articulos/no-es-la-estrategia-es-el-contexto 301
+/articulos/no-es-la-gente-es-el-diseno.html /articulos/no-es-la-gente-es-el-diseno 301
+/articulos/restriccion-que-nadie-ve.html /articulos/restriccion-que-nadie-ve 301
+/articulos/esfuerzo-local-avance-cero.html /articulos/esfuerzo-local-avance-cero 301
+/articulos/autorizaciones.html /articulos/autorizaciones 301
+/articulos/confianza-se-disenha.html /articulos/confianza-se-disenha 301
+/articulos/la-gente-deja-de-pensar.html /articulos/la-gente-deja-de-pensar 301
 
-# Rutas de la estructura anterior que pudieron quedar compartidas o indexadas.
-/dueno                  /duenos-fundadores.html      301
-/dueno.html             /duenos-fundadores.html      301
-/familia                /empresas-familiares.html    301
-/familia.html           /empresas-familiares.html    301
-/operacion              /directivos-gerentes.html    301
-/operacion.html         /directivos-gerentes.html    301
-/empresas               /para-quien.html             301
-/empresas.html          /para-quien.html             301
-/servicios              /como-trabajamos.html        301
-/servicios.html         /como-trabajamos.html        301
-/contacto               /contacto.html               301
-/articulos              /articulos.html              301
+# Estructura histórica del sitio anterior.
+/metodologia /como-trabajamos 301
+/metodologia.html /como-trabajamos 301
+/dueno /duenos-fundadores 301
+/dueno.html /duenos-fundadores 301
+/familia /empresas-familiares 301
+/familia.html /empresas-familiares 301
+/operacion /directivos-gerentes 301
+/operacion.html /directivos-gerentes 301
+/empresas /para-quien 301
+/empresas.html /para-quien 301
+/servicios /como-trabajamos 301
+/servicios.html /como-trabajamos 301
