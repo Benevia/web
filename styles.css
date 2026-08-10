@@ -862,7 +862,7 @@ h3 {
 
 .mini-result-grid span {
   font-weight: 800;
-  color: var(--orange);
+  color: #B25E00; /* naranja institucional oscurecido para cumplir contraste 4.5:1 en texto pequeño */
   font-family: Montserrat,sans-serif;
   font-size: .8rem;
 }
