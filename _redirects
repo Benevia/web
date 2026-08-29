@@ -16,5 +16,11 @@
 /empresas.html          /para-quien.html             301
 /servicios              /como-trabajamos.html        301
 /servicios.html         /como-trabajamos.html        301
-/contacto               /contacto.html               301
-/articulos              /articulos.html              301
+
+# No se agregan reglas /contacto -> /contacto.html ni /articulos -> /articulos.html:
+# Cloudflare ya normaliza esas rutas de forma automática (quita la extensión .html
+# al servir el archivo). Una regla que apunte de vuelta a la versión con .html
+# entra en conflicto con esa normalización y produce un bucle infinito de
+# redirecciones ("too many redirects"). Si en algún momento se necesita una
+# redirección real desde /contacto o /articulos, el destino debe ser una URL
+# distinta a la del propio archivo con su extensión.
