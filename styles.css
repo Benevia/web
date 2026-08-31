@@ -273,7 +273,10 @@ section.block.dark .textlink:hover{color:var(--naranja-luz);border-bottom-color:
 /* ---------------- listas de artículos ---------------- */
 .art-list{margin-top:28px;display:flex;flex-direction:column;max-width:88ch}
 .art-item{
-  display:flex;justify-content:space-between;gap:28px;align-items:baseline;
+  display:grid;
+  grid-template-columns:110px minmax(0,1fr) minmax(260px,360px);
+  column-gap:28px;
+  align-items:baseline;
   padding:22px 0;border-top:1px solid var(--linea);
   text-decoration:none;color:var(--ink);
   transition:padding-left .25s ease;
@@ -284,7 +287,7 @@ section.block.dark .textlink:hover{color:var(--naranja-luz);border-bottom-color:
 .art-hook{color:var(--ink-2);font-size:.97rem;text-align:right;max-width:360px}
 .art-meta{
   color:var(--naranja-texto);font-family:var(--display);font-weight:600;font-size:12.5px;
-  letter-spacing:.14em;text-transform:uppercase;margin-right:20px;flex-shrink:0;
+  letter-spacing:.14em;text-transform:uppercase;margin-right:0;
 }
 
 /* ---------------- filtro de artículos ---------------- */
@@ -447,7 +450,7 @@ footer{
   .path{flex-direction:column;gap:8px}
   .path-name{min-width:0}
   .path-arrow{display:none}
-  .art-item{flex-direction:column;gap:6px}
+  .art-item{display:flex;flex-direction:column;gap:6px}
   .art-item .art-meta{margin-right:0}
   .art-hook{text-align:left;max-width:none}
   .disclosure-list summary{flex-direction:column;gap:6px;align-items:flex-start}
