@@ -389,6 +389,11 @@ footer{
   font-size:clamp(1.85rem,3.9vw,2.65rem);line-height:1.16;letter-spacing:-.03em;margin:0 0 22px;
 }
 .article-hero .dek{font-size:1.14rem;color:var(--ink-2);margin:0}
+.article-byline{
+  margin:18px 0 0;font-family:var(--display);font-size:.9rem;
+  font-weight:500;color:var(--ink-2);
+}
+.article-byline strong{font-weight:600;color:var(--ink)}
 .article-content{padding:44px 0 58px;font-size:1.1rem;line-height:1.78}
 .article-content p{margin:0 0 24px}
 .article-content h2{
