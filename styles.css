@@ -522,13 +522,26 @@ footer{
 .story-copy p{margin:0 0 22px}
 .story-copy p:last-child{margin-bottom:0}
 .story-copy-opening{padding-top:45px}
-.story-copy-opening > p:first-child{
+.story-opening-lead{
+  margin:0;
   font-family:var(--display);
   font-size:clamp(1.28rem,2vw,1.58rem);
   line-height:1.35;
+  font-weight:500;
   letter-spacing:-.018em;
   color:var(--ink);
 }
+.story-copy-opening h3{
+  margin:38px 0 10px;
+  font-family:var(--display);
+  font-size:clamp(1.18rem,1.6vw,1.38rem);
+  line-height:1.25;
+  font-weight:600;
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+.story-copy-opening .story-opening-lead + h3{margin-top:32px}
+.story-copy-opening h3 + p{margin-top:0}
 .story-section{
   padding:clamp(70px,7.8vw,112px) var(--canal);
   border-top:1px solid var(--linea);
@@ -688,9 +701,14 @@ footer{
   font-size:1.08rem;
   line-height:1.74;
 }
-.story-copy-opening > p:first-child{
+.story-opening-lead{
   font-size:clamp(1.24rem,1.8vw,1.5rem);
 }
+.story-copy-opening h3{
+  margin-top:42px;
+  margin-bottom:10px;
+}
+.story-copy-opening .story-opening-lead + h3{margin-top:34px}
 .story-section{
   padding:clamp(78px,8vw,118px) var(--canal);
   border-top:1px solid var(--linea-suave);
@@ -882,6 +900,12 @@ section.block.home-close > .kicker{
     font-size:1.03rem;
     line-height:1.7;
   }
+  .story-copy-opening h3{
+    margin-top:34px;
+    margin-bottom:8px;
+    font-size:1.16rem;
+  }
+  .story-copy-opening .story-opening-lead + h3{margin-top:28px}
   .story-pivot{margin-top:38px;padding-top:28px}
   .story-pivot p{font-size:clamp(1.8rem,8.8vw,2.55rem)}
   .story-definition{margin-top:38px !important;padding-top:28px}
