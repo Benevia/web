@@ -658,3 +658,237 @@ footer{
 @media (max-width:760px){
   .home-articles .art-item{display:flex;flex-direction:column;gap:6px}
 }
+
+/* ============================================================
+   Página principal 2026 — versión editorial vertical
+   Ajuste de composición: títulos sobre el texto, lectura continua
+   y pocos cambios de plano con intención narrativa.
+   Sólo afecta la página principal.
+   ============================================================ */
+.home-story-hero{
+  padding:clamp(78px,8.5vw,126px) var(--canal) clamp(82px,8.5vw,124px);
+}
+.story-hero-grid,
+.story-grid{
+  display:block;
+  width:min(1040px,100%);
+  margin:0 auto;
+}
+.home-story-hero h1{
+  max-width:940px;
+  font-size:clamp(2.75rem,5.6vw,5.45rem);
+  line-height:1.02;
+  letter-spacing:-.052em;
+}
+.story-copy,
+.story-copy-opening{
+  max-width:730px;
+  padding-top:0;
+  margin-top:clamp(30px,3.4vw,46px);
+  font-size:1.08rem;
+  line-height:1.74;
+}
+.story-copy-opening > p:first-child{
+  font-size:clamp(1.24rem,1.8vw,1.5rem);
+}
+.story-section{
+  padding:clamp(78px,8vw,118px) var(--canal);
+  border-top:1px solid var(--linea-suave);
+  background:var(--papel);
+}
+.story-section-soft,
+.story-section-dark{
+  background:var(--papel);
+  color:var(--ink);
+  border-top-color:var(--linea-suave);
+}
+.story-heading{
+  margin:0;
+  max-width:880px;
+  font-size:clamp(2.05rem,3.8vw,3.55rem);
+  line-height:1.07;
+  letter-spacing:-.043em;
+}
+.story-heading::before{display:none}
+.story-section .story-copy{
+  margin-top:clamp(28px,3vw,40px);
+  color:var(--ink);
+}
+.story-section-dark .story-copy,
+.story-section-dark .story-emphasis,
+.story-section-dark .story-quiet-close{
+  color:var(--ink);
+}
+.story-quiet-close{
+  padding-top:8px;
+  color:var(--ink);
+}
+.story-emphasis{
+  margin-top:40px !important;
+  padding-top:30px;
+  border-top:1px solid var(--linea);
+}
+
+/* El giro no necesita otro plano: sigue el mismo relato. */
+section[aria-labelledby="otra-cosa"]{
+  padding-top:clamp(86px,8.5vw,126px);
+}
+
+/* El momento de sustitución rompe por una vez la columna de lectura. */
+.story-pivot{
+  width:min(900px,calc(100vw - (2 * var(--canal))));
+  margin:clamp(46px,5vw,68px) 0 4px;
+  padding:clamp(30px,3.5vw,42px) 0 8px;
+  border-top:1px solid var(--linea);
+}
+.story-pivot p{
+  font-size:clamp(2rem,4vw,3.45rem);
+  line-height:1.08;
+  letter-spacing:-.043em;
+}
+.story-pivot p + p{
+  margin-top:9px;
+  color:var(--naranja-texto);
+}
+
+/* La dificultad real del cambio merece un territorio propio. */
+.story-section-cost{
+  background:#E7EBEB;
+  border-top-color:rgba(11,36,48,.14);
+  padding-top:clamp(88px,9vw,132px);
+  padding-bottom:clamp(88px,9vw,132px);
+}
+.story-section-cost .story-copy{color:var(--ink)}
+.story-section-cost .story-emphasis{
+  font-size:clamp(1.42rem,2.2vw,1.82rem);
+  line-height:1.42;
+}
+
+/* La capacidad que queda en la empresa abre un segundo plano claro. */
+section[aria-labelledby="capacidad"]{
+  background:#EEF1F1;
+  border-top-color:rgba(11,36,48,.12);
+}
+.story-observations{
+  margin:34px 0 38px;
+}
+.story-observations p{
+  padding:19px 0;
+}
+.story-definition{
+  width:min(880px,calc(100vw - (2 * var(--canal))));
+  margin-top:48px !important;
+  padding-top:34px;
+  font-size:clamp(1.42rem,2.55vw,2.1rem);
+  line-height:1.35;
+  letter-spacing:-.027em;
+}
+
+/* Aquí cambia el texto de reflexión a intervención. */
+section[aria-labelledby="como-trabajamos-home"]{
+  background:var(--tinta-2);
+  color:var(--sobre-tinta);
+  border-top-color:var(--linea-tinta);
+  padding-top:clamp(92px,9vw,136px);
+  padding-bottom:clamp(92px,9vw,136px);
+}
+section[aria-labelledby="como-trabajamos-home"] .story-heading{
+  color:var(--sobre-tinta);
+}
+section[aria-labelledby="como-trabajamos-home"] .story-copy{
+  max-width:760px;
+  color:#D2E2E9;
+}
+section[aria-labelledby="como-trabajamos-home"] .textlink{
+  color:var(--sobre-tinta);
+  border-bottom-color:var(--linea-tinta);
+}
+section[aria-labelledby="como-trabajamos-home"] .textlink:hover{
+  color:var(--naranja-luz);
+  border-bottom-color:var(--naranja-luz);
+}
+
+/* Cierre del ensayo: vuelve al papel y deja aire a la última idea. */
+.story-section-final{
+  background:var(--papel);
+  padding-top:clamp(102px,10vw,150px);
+  padding-bottom:clamp(104px,10vw,154px);
+}
+.story-final-line{
+  width:min(900px,calc(100vw - (2 * var(--canal))));
+  margin-top:48px !important;
+  padding-top:34px;
+  font-size:clamp(1.62rem,2.8vw,2.35rem);
+  line-height:1.3;
+}
+
+/* Artículos y conversación: también abandonan el riel lateral en home. */
+section.block.home-articles,
+section.block.home-close{
+  padding-left:max(var(--canal),calc((100vw - 1040px) / 2));
+  padding-right:max(var(--canal),calc((100vw - 1040px) / 2));
+}
+section.block.home-articles > .kicker,
+section.block.home-close > .kicker{
+  position:static;
+  width:auto;
+  margin:0 0 22px;
+  font-family:var(--display);
+  font-weight:600;
+  letter-spacing:.12em;
+}
+.home-articles{
+  padding-top:clamp(78px,8vw,112px) !important;
+  padding-bottom:clamp(82px,8vw,118px) !important;
+}
+.home-articles .lede{
+  max-width:620px;
+  margin-bottom:34px;
+}
+.home-articles .art-list{max-width:900px}
+.home-close{
+  padding-top:clamp(78px,8vw,112px) !important;
+  padding-bottom:clamp(82px,8vw,118px) !important;
+}
+.home-close .lede{max-width:650px}
+.home-close p{max-width:700px}
+
+@media (max-width:900px){
+  .home-story-hero h1{max-width:16ch}
+  .story-heading{max-width:18ch}
+  .story-copy,
+  .story-copy-opening{max-width:700px}
+  .story-pivot,
+  .story-definition,
+  .story-final-line{width:100%}
+}
+@media (max-width:760px){
+  .home-story-hero{padding:58px 22px 70px}
+  .story-section,
+  .story-section-cost,
+  section[aria-labelledby="como-trabajamos-home"],
+  .story-section-final{padding:66px 22px 72px}
+  .home-story-hero h1{
+    max-width:none;
+    font-size:clamp(2.35rem,11vw,3.5rem);
+  }
+  .story-heading{
+    max-width:none;
+    font-size:clamp(1.85rem,8vw,2.65rem);
+  }
+  .story-copy,
+  .story-copy-opening{
+    margin-top:26px;
+    font-size:1.03rem;
+    line-height:1.7;
+  }
+  .story-pivot{margin-top:38px;padding-top:28px}
+  .story-pivot p{font-size:clamp(1.8rem,8.8vw,2.55rem)}
+  .story-definition{margin-top:38px !important;padding-top:28px}
+  .story-final-line{margin-top:38px !important;padding-top:28px}
+  section.block.home-articles,
+  section.block.home-close{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+}

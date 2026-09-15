@@ -23,3 +23,6 @@ La estructura, `_redirects`, `robots.txt`, `sitemap.xml` y `wrangler.jsonc` se c
 El formulario de `contacto.html` conserva el endpoint Formspree del sitio fuente: `https://formspree.io/f/xdabwwzv`.
 
 No se incorporó un token de analítica porque el paquete fuente no contenía uno real. El sitio funciona sin analítica y puede publicarse así; Cloudflare Web Analytics puede añadirse posteriormente sin modificar el diseño.
+
+## Ajuste visual 15-sep-2026
+La página principal conserva íntegramente su contenido y redacción. Se cambió únicamente su composición visual: lectura vertical, títulos sobre el texto, menos alternancia de fondos y rupturas visuales reservadas para momentos clave. Los artículos y páginas interiores no fueron modificados.
