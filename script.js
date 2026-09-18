@@ -1,7 +1,4 @@
 (() => {
-
-  /* Anclas de estructuras anteriores del sitio, resueltas en el cliente
-     porque el fragmento no viaja al servidor. */
   const anclasAnteriores = {
     '#dueno': 'duenos-fundadores.html',
     '#dueno-fundador': 'duenos-fundadores.html',
@@ -20,7 +17,22 @@
     return;
   }
 
-  /* Menú en pantallas pequeñas */
+  const header = document.querySelector('.site-header');
+  const progress = document.createElement('div');
+  progress.className = 'scroll-progress';
+  progress.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(progress);
+
+  const updateScroll = () => {
+    const top = window.scrollY || document.documentElement.scrollTop;
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    progress.style.width = `${Math.min(100, (top / max) * 100)}%`;
+    if (header) header.classList.toggle('scrolled', top > 24);
+  };
+  updateScroll();
+  window.addEventListener('scroll', updateScroll, {passive:true});
+  window.addEventListener('resize', updateScroll, {passive:true});
+
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.site-nav');
   if (toggle && nav) {
@@ -43,7 +55,29 @@
     });
   }
 
-  /* Filtro de artículos por categoría */
+
+
+  // Portada V3: revelación progresiva sin alterar el contenido editorial.
+  const openingDetails = [...document.querySelectorAll('.opening-disclosure')];
+  openingDetails.forEach(detail => {
+    detail.addEventListener('toggle', () => {
+      const cue = detail.querySelector('.reveal-cue');
+      if (cue) cue.textContent = detail.open ? 'Cerrar' : 'Leer';
+      if (detail.open) {
+        openingDetails.forEach(other => {
+          if (other !== detail && other.open) other.open = false;
+        });
+      }
+    });
+  });
+
+  document.querySelectorAll('.story-reveal').forEach(detail => {
+    detail.addEventListener('toggle', () => {
+      const label = detail.querySelector('.story-reveal-label');
+      if (label) label.textContent = detail.open ? 'Cerrar' : 'Leer completo';
+    });
+  });
+
   const botones = [...document.querySelectorAll('.filter-btn')];
   const articulos = [...document.querySelectorAll('.article-list-item')];
   const vacio = document.getElementById('emptyFilter');
@@ -66,4 +100,17 @@
     }));
   }
 
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-motion');
+    const targets = document.querySelectorAll('.story-section, section.block, .page-hero, .article-hero');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    targets.forEach(el => observer.observe(el));
+  }
 })();

@@ -27,9 +27,9 @@
 <link href="images/favicon-benevia.png" rel="icon" type="image/png"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Artículos | Benevia", "description": "Ideas para mirar problemas conocidos de la empresa desde otro lugar: autoridad, coordinación, dependencia, restricción, diseño y transición.", "url": "https://benevia.mx/articulos.html", "inLanguage": "es-MX"}</script>
 </head>
-<body>
+<body class="page-articulos" data-architecture="composed">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
-<header class="site-header">
+<header class="site-header" data-page="articulos">
 <a aria-label="Benevia, inicio" href="index.html"><img alt="Benevia" class="brand-logo" fetchpriority="high" height="153" src="images/logo-claro.png" width="504"/></a>
 <button aria-controls="navegacion-principal" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle" type="button">Menú<span></span><span></span><span></span></button>
 <nav aria-label="Navegación principal" class="site-nav" id="navegacion-principal">
@@ -38,11 +38,11 @@
 </nav>
 </header>
 <main id="contenido">
-<section class="page-hero">
+<section class="sin-imagen hero-text-only hero-integrated page-hero">
 <h1>Ideas para mirar su empresa con más claridad.</h1>
 <p class="lead">No son consejos. Son formas de mirar un problema que quizás ya está viviendo, escritas para leerse solas o para compartirse con su equipo.</p>
 </section>
-<section class="block tight">
+<section class="scene-article-index layout-1 block tight">
 <div aria-label="Filtrar artículos" class="filters" role="group">
 <button aria-pressed="true" class="filter-btn active" data-filter="todos" type="button">Todos</button>
 <button aria-pressed="false" class="filter-btn" data-filter="coordinacion" type="button">Coordinación</button>
@@ -51,7 +51,7 @@
 <button aria-pressed="false" class="filter-btn" data-filter="contexto" type="button">Contexto</button>
 <button aria-pressed="false" class="filter-btn" data-filter="transicion" type="button">Transición</button>
 </div>
-<div class="art-list" id="articleList">
+<div class="art-list article-grid" id="articleList">
 <a class="art-item article-list-item" data-category="coordinacion" href="articulos/que-quede-por-escrito.html">
 <span class="art-meta">Junio 2026</span>
 <span class="art-title">Que quede por escrito que pregunté</span>
@@ -115,7 +115,7 @@
 </div>
 <p class="empty-filter" hidden="" id="emptyFilter">Todavía no hay artículos en esta categoría.</p>
 </section>
-<section class="block close-band">
+<section class="close-band scene-cta block scene-final-cta">
 <h2 class="kicker">Primera conversación</h2>
 <p class="lede">Si algo de lo que leyó le resuena, podemos hablar de su empresa.</p>
 <a class="btn-invert" href="contacto.html">Conversar</a>
