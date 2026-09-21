@@ -1,26 +1,22 @@
 # Redirecciones permanentes desde las rutas del sitio anterior.
 # Cloudflare Workers (assets) procesa este archivo antes de servir el contenido estático.
 
-/metodologia.html       /como-trabajamos.html   301
-/metodologia            /como-trabajamos.html   301
-/index.html             /                       301
+/metodologia.html       /como-trabajamos   301
+/metodologia            /como-trabajamos   301
+/index.html             /                  301
 
 # Rutas de la estructura anterior que pudieron quedar compartidas o indexadas.
-/dueno                  /duenos-fundadores.html      301
-/dueno.html             /duenos-fundadores.html      301
-/familia                /empresas-familiares.html    301
-/familia.html           /empresas-familiares.html    301
-/operacion              /directivos-gerentes.html    301
-/operacion.html         /directivos-gerentes.html    301
-/empresas               /para-quien.html             301
-/empresas.html          /para-quien.html             301
-/servicios              /como-trabajamos.html        301
-/servicios.html         /como-trabajamos.html        301
+/dueno                  /duenos-fundadores      301
+/dueno.html             /duenos-fundadores      301
+/familia                /empresas-familiares    301
+/familia.html           /empresas-familiares    301
+/operacion              /directivos-gerentes    301
+/operacion.html         /directivos-gerentes    301
+/empresas               /para-quien             301
+/empresas.html          /para-quien             301
+/servicios              /como-trabajamos        301
+/servicios.html         /como-trabajamos        301
 
-# No se agregan reglas /contacto -> /contacto.html ni /articulos -> /articulos.html:
-# Cloudflare ya normaliza esas rutas de forma automática (quita la extensión .html
-# al servir el archivo). Una regla que apunte de vuelta a la versión con .html
-# entra en conflicto con esa normalización y produce un bucle infinito de
-# redirecciones ("too many redirects"). Si en algún momento se necesita una
-# redirección real desde /contacto o /articulos, el destino debe ser una URL
-# distinta a la del propio archivo con su extensión.
+# Las URLs canónicas del sitio no llevan extensión .html. Cloudflare normaliza
+# automáticamente las rutas de los archivos HTML, por lo que no se crean reglas
+# inversas que puedan producir bucles de redirección.
